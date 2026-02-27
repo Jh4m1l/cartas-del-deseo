@@ -307,9 +307,9 @@
 
   <!-- Botones de tipo de castigo (aparecen después de revelar) -->
   <div class="tipo-castigo" id="tipo-castigo">
-    <button class="btn-tipo truth" id="btn-truth" onclick="mostrarCastigo('truth')">🧠<br>Truth</button>
-    <button class="btn-tipo dare" id="btn-dare" onclick="mostrarCastigo('dare')">🎯<br>Dare</button>
-    <button class="btn-tipo strip" id="btn-strip" onclick="mostrarCastigo('strip')">👗<br>Strip</button>
+    <button class="btn-tipo truth" id="btn-truth" onclick="mostrarCastigo('truth')">🧠<br>Verdad</button>
+    <button class="btn-tipo dare" id="btn-dare" onclick="mostrarCastigo('dare')">🎯<br>Reto</button>
+    <button class="btn-tipo strip" id="btn-strip" onclick="mostrarCastigo('strip')">👗<br>Prenda</button>
   </div>
 
   <button class="btn-tirar" id="btn-tirar" onclick="tirarAmbas()">🃏 Revelar cartas</button>
@@ -523,7 +523,7 @@ function mostrarBotonesTipo(esDoble) {
 // ═══════════════════════════════
 function getCastigo(tipo) {
   const key = String(nivel) + tipo;
-  const lista = cartasData[String(nivel)][tipo];
+ const lista = cartasData[String(nivel)][tipo + 's'];
   if (!colasCastigos[key] || colasCastigos[key].length === 0) {
     const copia = [...lista];
     for (let i=copia.length-1; i>0; i--) {
