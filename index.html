@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#c0392b">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -106,31 +107,16 @@
     border-radius: 12px;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     font-size: 2.5rem; font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    cursor: pointer; transition: all 0.3s; position: relative;
+    user-select: none; -webkit-tap-highlight-color: transparent;
   }
 
-  .carta-dorso {
-    background: linear-gradient(135deg, #1a0a14, #2d1520);
-    border: 2px solid rgba(240,192,64,0.3);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  }
-  .carta-dorso::before {
-    content: '🃏';
-    font-size: 2.5rem;
-  }
+  .carta-dorso { background: linear-gradient(135deg, #1a0a14, #2d1520); border: 2px solid rgba(240,192,64,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  .carta-dorso::before { content: '🃏'; font-size: 2.5rem; }
   .carta-dorso:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(240,192,64,0.3); border-color: var(--dorado); }
   .carta-dorso:active { transform: scale(0.93); }
 
-  .carta-revelada {
-    border: 2px solid;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    flex-direction: column; gap: 4px;
-    font-family: 'Playfair Display', serif;
-  }
+  .carta-revelada { border: 2px solid; box-shadow: 0 4px 20px rgba(0,0,0,0.4); flex-direction: column; gap: 4px; font-family: 'Playfair Display', serif; }
   .carta-revelada.roja { background: linear-gradient(135deg, #8b0000, #c0392b); border-color: #ff6b6b; }
   .carta-revelada.negra { background: linear-gradient(135deg, #1a1a2e, #16213e); border-color: #6ee7b7; }
   .carta-revelada.ganadora { box-shadow: 0 0 30px rgba(240,192,64,0.6); border-color: var(--dorado); animation: pulso 0.5s ease; }
@@ -139,39 +125,21 @@
   .carta-palo { font-size: 1.2rem; }
 
   .vs-texto { font-size: 1rem; color: rgba(255,255,255,0.2); font-weight: 700; letter-spacing: 2px; }
-
   .resultado-texto { font-size: 1rem; min-height: 28px; text-align: center; margin-bottom: 12px; }
 
   /* Botón tirar */
-  .btn-tirar {
-    width: 100%; padding: 15px;
-    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
-    background: linear-gradient(135deg, #8b0000, var(--rojo));
-    border: none; border-radius: 50px; color: white; cursor: pointer;
-    transition: all 0.2s; box-shadow: 0 5px 20px rgba(192,57,43,0.35);
-    letter-spacing: 1px; margin-bottom: 12px;
-  }
+  .btn-tirar { width: 100%; padding: 15px; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; background: linear-gradient(135deg, #8b0000, var(--rojo)); border: none; border-radius: 50px; color: white; cursor: pointer; transition: all 0.2s; box-shadow: 0 5px 20px rgba(192,57,43,0.35); letter-spacing: 1px; margin-bottom: 12px; }
   .btn-tirar:hover { transform: scale(1.02); }
   .btn-tirar:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
 
   /* Tipo de castigo */
   .tipo-castigo { display: flex; gap: 8px; width: 100%; margin-bottom: 8px; }
-  .btn-tipo {
-    flex: 1; padding: 10px 6px;
-    border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.6);
-    font-size: 0.72rem; font-weight: 600; cursor: pointer;
-    transition: all 0.2s; font-family: 'DM Sans', sans-serif;
-    line-height: 1.3; text-align: center;
-  }
+  .btn-tipo { flex: 1; padding: 10px 6px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.6); font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; line-height: 1.3; text-align: center; }
   .btn-tipo.truth:hover, .btn-tipo.truth.sel { border-color: #6ee7b7; color: #6ee7b7; background: rgba(110,231,183,0.1); }
   .btn-tipo.dare:hover, .btn-tipo.dare.sel { border-color: var(--dorado); color: var(--dorado); background: rgba(240,192,64,0.1); }
   .btn-tipo.strip:hover, .btn-tipo.strip.sel { border-color: #ff6b6b; color: #ff6b6b; background: rgba(255,107,107,0.1); }
   .btn-tipo { display: none; }
   .btn-tipo.visible { display: block; }
-
-  /* Cartas mazo restante */
-  .mazo-info { font-size: 0.72rem; color: rgba(255,255,255,0.3); text-align: center; }
 
   /* ══ OVERLAY CASTIGO ══ */
   .overlay-castigo { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 100; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(6px); }
@@ -185,11 +153,26 @@
   .castigo-perdedor { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 10px; }
   .castigo-perdedor span { color: #ff6b6b; font-weight: 600; }
   .castigo-emoji { font-size: 3rem; margin-bottom: 12px; display: block; }
-  .castigo-texto { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 24px; }
+  .castigo-texto { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 16px; }
   .btn-cumplido { width: 100%; padding: 14px; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; background: linear-gradient(135deg, var(--rojo), #8b0000); border: none; border-radius: 50px; color: white; cursor: pointer; box-shadow: 0 6px 25px rgba(192,57,43,0.35); letter-spacing: 1px; }
   .btn-cumplido:hover { transform: scale(1.02); }
   .castigo-skip { margin-top: 12px; font-size: 0.75rem; color: rgba(255,255,255,0.25); cursor: pointer; }
   .castigo-skip:hover { color: rgba(255,255,255,0.5); }
+
+  /* Botón glosario dentro del castigo */
+  .btn-glosario { display: none; margin: 0 auto 16px; padding: 7px 16px; background: rgba(240,192,64,0.08); border: 1px solid rgba(240,192,64,0.25); border-radius: 20px; color: var(--dorado); font-size: 0.75rem; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+  .btn-glosario.visible { display: inline-block; }
+  .btn-glosario:hover { background: rgba(240,192,64,0.15); }
+
+  /* ══ OVERLAY GLOSARIO ══ */
+  .overlay-glosario { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 200; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(8px); }
+  .overlay-glosario.visible { display: flex; }
+  .glosario-card { max-width: 360px; width: 100%; background: #120a0e; border-radius: 24px; padding: 28px 22px; text-align: center; border: 1px solid rgba(240,192,64,0.2); animation: aparecer 0.35s cubic-bezier(.17,.67,.35,1.3); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+  .glosario-icono { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+  .glosario-termino { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--dorado); margin-bottom: 12px; }
+  .glosario-definicion { font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 22px; }
+  .btn-glosario-cerrar { padding: 11px 28px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; background: rgba(240,192,64,0.12); border: 1px solid rgba(240,192,64,0.3); border-radius: 50px; color: var(--dorado); cursor: pointer; transition: all 0.2s; }
+  .btn-glosario-cerrar:hover { background: rgba(240,192,64,0.2); }
 
   /* ══ GANADOR ══ */
   .trofeo { font-size: 5rem; margin-bottom: 14px; animation: aparecer 0.5s ease; }
@@ -202,12 +185,10 @@
   .btns-final { display: flex; gap: 10px; }
   .btn-revancha { padding: 13px 26px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; background: linear-gradient(135deg, var(--rojo), #8b0000); border: none; border-radius: 50px; color: white; cursor: pointer; }
   .btn-menu { padding: 13px 26px; font-size: 0.95rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; color: rgba(255,255,255,0.7); cursor: pointer; font-family: 'DM Sans', sans-serif; }
-
-  /* Combo final */
   .combo-badge { background: rgba(150,0,255,0.15); color: #d580ff; border: 1px solid rgba(150,0,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 20px; }
 
   /* Cargando */
-  .cargando { position: fixed; inset: 0; background: var(--negro); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; z-index: 200; transition: opacity 0.4s; }
+  .cargando { position: fixed; inset: 0; background: var(--negro); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; z-index: 300; transition: opacity 0.4s; }
   .cargando.oculto { opacity: 0; pointer-events: none; }
   .spinner { width: 36px; height: 36px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--dorado); border-radius: 50%; animation: girar 0.8s linear infinite; }
 
@@ -229,19 +210,30 @@
 <!-- OVERLAY CASTIGO -->
 <div class="overlay-castigo" id="overlay-castigo">
   <div class="castigo-card">
-    <div class="castigo-tipo-badge" id="castigo-badge">🎯 DARE</div>
+    <div class="castigo-tipo-badge" id="castigo-badge">🎯 RETO</div>
     <div class="castigo-perdedor">¡<span id="castigo-perdedor">Jugador</span> perdió esta ronda!</div>
     <div class="castigo-emoji" id="castigo-emoji">🃏</div>
     <div class="castigo-texto" id="castigo-texto">...</div>
+    <button class="btn-glosario" id="btn-glosario" onclick="abrirGlosario()">📖 ¿Qué significa?</button>
     <button class="btn-cumplido" onclick="cerrarCastigo()">✓ ¡Hecho! Siguiente</button>
     <div class="castigo-skip" onclick="cerrarCastigo()">Saltar</div>
+  </div>
+</div>
+
+<!-- OVERLAY GLOSARIO -->
+<div class="overlay-glosario" id="overlay-glosario">
+  <div class="glosario-card">
+    <span class="glosario-icono">📖</span>
+    <div class="glosario-termino" id="glosario-termino">Término</div>
+    <div class="glosario-definicion" id="glosario-definicion">Definición...</div>
+    <button class="btn-glosario-cerrar" onclick="cerrarGlosario()">← Volver al castigo</button>
   </div>
 </div>
 
 <!-- ══ INICIO ══ -->
 <div class="pantalla activa" id="pantalla-inicio">
   <div class="logo">🃏 Las Cartas<br>del Deseo</div>
-  <p class="logo-sub">Strip · Truth · Dare</p>
+  <p class="logo-sub">Strip · Verdad · Reto</p>
 
   <p class="seccion-label">Nivel de intensidad</p>
   <div class="niveles">
@@ -302,7 +294,7 @@
       <div class="marc-puntos" id="marc-j1-pts">0</div>
     </div>
     <div class="marc-centro">
-      <div class="marc-pts-meta" id="meta-label">Meta: 5 pts</div>
+      <div class="marc-pts-meta" id="meta-label">Meta: 3 pts</div>
       <div class="marc-pts-label">🃏 <span id="cartas-restantes">52</span> cartas</div>
     </div>
     <div class="marc-jugador marc-j2">
@@ -325,7 +317,6 @@
 
   <div class="resultado-texto" id="resultado-texto">¡Toquen sus cartas para revelar!</div>
 
-  <!-- Botones de tipo de castigo (aparecen después de revelar) -->
   <div class="tipo-castigo" id="tipo-castigo">
     <button class="btn-tipo truth" id="btn-truth" onclick="mostrarCastigo('truth')">🧠<br>Verdad</button>
     <button class="btn-tipo dare" id="btn-dare" onclick="mostrarCastigo('dare')">🎯<br>Reto</button>
@@ -353,7 +344,7 @@
 
 <script>
 // ═══════════════════════════════
-// CARGAR CARTAS.JSON
+// CARGAR JSON
 // ═══════════════════════════════
 let cartasData = {};
 
@@ -369,7 +360,7 @@ function ocultarCargando() {
 }
 
 // ═══════════════════════════════
-// MAZO DE 52 CARTAS
+// MAZO
 // ═══════════════════════════════
 const PALOS = ['♠️','♥️','♦️','♣️'];
 const VALORES = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
@@ -378,12 +369,9 @@ const PALOS_ROJOS = ['♥️','♦️'];
 
 function crearMazo() {
   const mazo = [];
-  for (const palo of PALOS) {
-    for (const val of VALORES) {
+  for (const palo of PALOS)
+    for (const val of VALORES)
       mazo.push({ valor: val, palo: palo, num: VALOR_NUM[val] });
-    }
-  }
-  // Mezclar
   for (let i = mazo.length-1; i > 0; i--) {
     const j = Math.floor(Math.random()*(i+1));
     [mazo[i],mazo[j]] = [mazo[j],mazo[i]];
@@ -399,14 +387,8 @@ let puntosJ1=0, puntosJ2=0;
 let nombreJ1='Jugador 1', nombreJ2='Jugador 2';
 let mazo=[], cartaJ1=null, cartaJ2=null;
 let perdedorActual=null, juegoActivo=true;
-let colasCastigos={};
-let pendienteCombo=false, combosRestantes=0;
-let combinacion='hetero';
-
-function seleccionarSexo(jugador, sexo, btn) {
-  document.querySelectorAll('.btn-sexo-'+jugador).forEach(b => b.classList.remove('sel'));
-  btn.classList.add('sel');
-}
+let colasCastigos={}, combinacion='hetero';
+let castigoActual=null;
 
 const nivelConfig = {
   1:{ label:'🌙 CHILL', clase:'ni1' },
@@ -419,7 +401,7 @@ const nivelConfig = {
 // ═══════════════════════════════
 function seleccionarNivel(n) {
   nivel = n;
-  [1,2,3].forEach(i => { document.getElementById('card-'+i).classList.toggle('activo',i===n); });
+  [1,2,3].forEach(i => document.getElementById('card-'+i).classList.toggle('activo',i===n));
 }
 
 function seleccionarMeta(n, btn) {
@@ -428,18 +410,23 @@ function seleccionarMeta(n, btn) {
   btn.classList.add('sel');
 }
 
+function seleccionarSexo(jugador, sexo, btn) {
+  document.querySelectorAll('.btn-sexo-'+jugador).forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
 function iniciarJuego() {
   puntosJ1=0; puntosJ2=0; juegoActivo=true;
-  cartaJ1=null; cartaJ2=null; perdedorActual=null;
-  colasCastigos={}; pendienteCombo=false; combosRestantes=0;
+  cartaJ1=null; cartaJ2=null; perdedorActual=null; castigoActual=null;
+  colasCastigos={};
 
   nombreJ1 = document.getElementById('input-j1').value.trim() || 'Jugador 1';
   nombreJ2 = document.getElementById('input-j2').value.trim() || 'Jugador 2';
 
   const sexoJ1 = document.querySelector('.btn-sexo-j1.sel').dataset.sexo;
   const sexoJ2 = document.querySelector('.btn-sexo-j2.sel').dataset.sexo;
-  if ((sexoJ1==='H' && sexoJ2==='M') || (sexoJ1==='M' && sexoJ2==='H')) combinacion='hetero';
-  else if (sexoJ1==='H' && sexoJ2==='H') combinacion='gay';
+  if ((sexoJ1==='H'&&sexoJ2==='M')||(sexoJ1==='M'&&sexoJ2==='H')) combinacion='hetero';
+  else if (sexoJ1==='H'&&sexoJ2==='H') combinacion='gay';
   else combinacion='lesbi';
 
   mazo = crearMazo();
@@ -464,8 +451,7 @@ function iniciarJuego() {
 // ═══════════════════════════════
 function tirarAmbas() {
   if (!juegoActivo || mazo.length < 2) return;
-  cartaJ1 = mazo.pop();
-  cartaJ2 = mazo.pop();
+  cartaJ1 = mazo.pop(); cartaJ2 = mazo.pop();
   revelarCartas();
 }
 
@@ -475,7 +461,7 @@ function tirarCartaJ1() {
   mostrarCartaRevelada('carta-j1', cartaJ1, false);
   document.getElementById('cartas-restantes').textContent = mazo.length;
   if (cartaJ2) revelarResultado();
-  else document.getElementById('resultado-texto').textContent = `${nombreJ1} esperando ${nombreJ2}...`;
+  else document.getElementById('resultado-texto').textContent = `${nombreJ1} listo ⏳ esperando ${nombreJ2}...`;
   document.getElementById('btn-tirar').style.display='none';
 }
 
@@ -485,7 +471,7 @@ function tirarCartaJ2() {
   mostrarCartaRevelada('carta-j2', cartaJ2, false);
   document.getElementById('cartas-restantes').textContent = mazo.length;
   if (cartaJ1) revelarResultado();
-  else document.getElementById('resultado-texto').textContent = `${nombreJ2} esperando ${nombreJ1}...`;
+  else document.getElementById('resultado-texto').textContent = `${nombreJ2} listo ⏳ esperando ${nombreJ1}...`;
   document.getElementById('btn-tirar').style.display='none';
 }
 
@@ -496,7 +482,7 @@ function revelarCartas() {
   setTimeout(revelarResultado, 400);
 }
 
-function mostrarCartaRevelada(id, carta, esGanadora) {
+function mostrarCartaRevelada(id, carta) {
   const el = document.getElementById(id);
   const esRoja = PALOS_ROJOS.includes(carta.palo);
   el.className = 'carta carta-revelada ' + (esRoja ? 'roja' : 'negra');
@@ -506,52 +492,39 @@ function mostrarCartaRevelada(id, carta, esGanadora) {
 
 function revelarResultado() {
   const esDoble = cartaJ1.valor === cartaJ2.valor;
-
   if (esDoble) {
     document.getElementById('resultado-texto').textContent = '🎰 ¡DOBLE DARE! ×2 intensidad';
     document.getElementById('carta-j1').classList.add('ganadora');
     document.getElementById('carta-j2').classList.add('ganadora');
-    perdedorActual = null; // empate = ambos hacen castigo
+    perdedorActual = null;
     mostrarBotonesTipo(true);
     document.getElementById('btn-tirar').style.display='none';
     return;
   }
-
   if (cartaJ1.num > cartaJ2.num) {
     document.getElementById('resultado-texto').textContent = `🎉 ¡Gana ${nombreJ1}! ${nombreJ2} elige su castigo`;
     document.getElementById('carta-j1').classList.add('ganadora');
     document.getElementById('carta-j2').classList.add('perdedora');
-    perdedorActual = nombreJ2;
-    puntosJ1++;
+    perdedorActual = nombreJ2; puntosJ1++;
   } else {
     document.getElementById('resultado-texto').textContent = `🎉 ¡Gana ${nombreJ2}! ${nombreJ1} elige su castigo`;
     document.getElementById('carta-j2').classList.add('ganadora');
     document.getElementById('carta-j1').classList.add('perdedora');
-    perdedorActual = nombreJ1;
-    puntosJ2++;
+    perdedorActual = nombreJ1; puntosJ2++;
   }
-
   actualizarMarcador();
   mostrarBotonesTipo(false);
   document.getElementById('btn-tirar').style.display='none';
-
-  // Verificar si alguien ganó
-  if (puntosJ1 >= metaPuntos || puntosJ2 >= metaPuntos) {
-    juegoActivo = false;
-  }
+  if (puntosJ1 >= metaPuntos || puntosJ2 >= metaPuntos) juegoActivo = false;
 }
 
 function mostrarBotonesTipo(esDoble) {
-  ['btn-truth','btn-dare','btn-strip'].forEach(id => {
-    document.getElementById(id).classList.add('visible');
-  });
-  if (esDoble) {
-    document.getElementById('btn-truth').style.opacity='0.5';
-  }
+  ['btn-truth','btn-dare','btn-strip'].forEach(id => document.getElementById(id).classList.add('visible'));
+  if (esDoble) document.getElementById('btn-truth').style.opacity='0.5';
 }
 
 // ═══════════════════════════════
-// CASTIGOS DESDE JSON
+// CASTIGOS
 // ═══════════════════════════════
 function getCastigo(tipo) {
   const key = combinacion + String(nivel) + tipo;
@@ -568,7 +541,7 @@ function getCastigo(tipo) {
 }
 
 function mostrarCastigo(tipo) {
-  const castigo = getCastigo(tipo);
+  castigoActual = getCastigo(tipo);
   const esDoble = cartaJ1 && cartaJ2 && cartaJ1.valor === cartaJ2.valor;
 
   const tipoLabels = {
@@ -578,17 +551,20 @@ function mostrarCastigo(tipo) {
   };
 
   const badge = document.getElementById('castigo-badge');
-  if (esDoble) {
-    badge.textContent = '🎰 DOBLE DARE ×2';
-    badge.className = 'castigo-tipo-badge badge-doble';
-  } else {
-    badge.textContent = tipoLabels[tipo].label;
-    badge.className = 'castigo-tipo-badge ' + tipoLabels[tipo].clase;
-  }
+  if (esDoble) { badge.textContent='🎰 DOBLE DARE ×2'; badge.className='castigo-tipo-badge badge-doble'; }
+  else { badge.textContent=tipoLabels[tipo].label; badge.className='castigo-tipo-badge '+tipoLabels[tipo].clase; }
 
   document.getElementById('castigo-perdedor').textContent = perdedorActual || 'Los dos';
-  document.getElementById('castigo-emoji').textContent = castigo.emoji;
-  document.getElementById('castigo-texto').textContent = castigo.texto;
+  document.getElementById('castigo-emoji').textContent = castigoActual.emoji;
+  document.getElementById('castigo-texto').textContent = castigoActual.texto;
+
+  // Mostrar botón glosario solo si el castigo tiene término
+  const btnGlos = document.getElementById('btn-glosario');
+  if (castigoActual.termino) {
+    btnGlos.classList.add('visible');
+  } else {
+    btnGlos.classList.remove('visible');
+  }
 
   ocultarBotonesTipo();
   document.getElementById('overlay-castigo').classList.add('visible');
@@ -597,39 +573,45 @@ function mostrarCastigo(tipo) {
 function ocultarBotonesTipo() {
   ['btn-truth','btn-dare','btn-strip'].forEach(id => {
     document.getElementById(id).classList.remove('visible');
+    document.getElementById(id).style.opacity='1';
   });
 }
 
 function cerrarCastigo() {
   document.getElementById('overlay-castigo').classList.remove('visible');
-  if (!juegoActivo) {
-    setTimeout(mostrarGanador, 300);
-  } else {
-    resetRonda();
-  }
+  if (!juegoActivo) setTimeout(mostrarGanador, 300);
+  else resetRonda();
+}
+
+// ═══════════════════════════════
+// GLOSARIO
+// ═══════════════════════════════
+function abrirGlosario() {
+  if (!castigoActual || !castigoActual.termino) return;
+  document.getElementById('glosario-termino').textContent = castigoActual.termino;
+  document.getElementById('glosario-definicion').textContent = castigoActual.definicion;
+  document.getElementById('overlay-glosario').classList.add('visible');
+}
+
+function cerrarGlosario() {
+  document.getElementById('overlay-glosario').classList.remove('visible');
 }
 
 // ═══════════════════════════════
 // UI HELPERS
 // ═══════════════════════════════
 function resetRonda() {
-  cartaJ1=null; cartaJ2=null; perdedorActual=null;
-
-  const cj1 = document.getElementById('carta-j1');
-  const cj2 = document.getElementById('carta-j2');
-  cj1.className='carta carta-dorso'; cj1.innerHTML='';
-  cj2.className='carta carta-dorso'; cj2.innerHTML='';
-  cj1.onclick = () => tirarCartaJ1();
-  cj2.onclick = () => tirarCartaJ2();
-
+  cartaJ1=null; cartaJ2=null; perdedorActual=null; castigoActual=null;
+  const cj1=document.getElementById('carta-j1');
+  const cj2=document.getElementById('carta-j2');
+  cj1.className='carta carta-dorso'; cj1.innerHTML=''; cj1.onclick=()=>tirarCartaJ1();
+  cj2.className='carta carta-dorso'; cj2.innerHTML=''; cj2.onclick=()=>tirarCartaJ2();
   document.getElementById('resultado-texto').textContent='¡Toquen sus cartas para revelar!';
   document.getElementById('btn-tirar').style.display='block';
   document.getElementById('btn-tirar').disabled = mazo.length < 2;
-
   if (mazo.length < 2) {
     document.getElementById('resultado-texto').textContent='¡Se acabaron las cartas!';
-    juegoActivo=false;
-    setTimeout(mostrarGanador, 1000);
+    juegoActivo=false; setTimeout(mostrarGanador, 1000);
   }
 }
 
@@ -647,21 +629,17 @@ function mostrar(id) {
 function volverInicio() { juegoActivo=false; mostrar('pantalla-inicio'); }
 
 function mostrarGanador() {
-  const j1gano = puntosJ1 >= metaPuntos || (puntosJ1 > puntosJ2 && mazo.length < 2);
-  const empate = puntosJ1 === puntosJ2;
-
-  document.getElementById('trofeo-emoji').textContent = empate ? '🤝' : '🏆';
-  document.getElementById('ganador-titulo').textContent = empate ? '¡Empate!' : j1gano ? `🎉 ¡Gana ${nombreJ1}!` : `🎉 ¡Gana ${nombreJ2}!`;
-
-  const perdedorFinal = j1gano ? nombreJ2 : nombreJ1;
-  document.getElementById('ganador-sub').textContent = empate ? 'Nadie gana, nadie pierde' : `¡${perdedorFinal} cumple el combo final!`;
-  document.getElementById('combo-badge').style.display = empate ? 'none' : 'inline-flex';
-
+  const j1gano = puntosJ1>=metaPuntos||(puntosJ1>puntosJ2&&mazo.length<2);
+  const empate = puntosJ1===puntosJ2;
+  document.getElementById('trofeo-emoji').textContent = empate?'🤝':'🏆';
+  document.getElementById('ganador-titulo').textContent = empate?'¡Empate!':j1gano?`🎉 ¡Gana ${nombreJ1}!`:`🎉 ¡Gana ${nombreJ2}!`;
+  const perdedorFinal = j1gano?nombreJ2:nombreJ1;
+  document.getElementById('ganador-sub').textContent = empate?'Nadie gana, nadie pierde':`¡${perdedorFinal} cumple el combo final!`;
+  document.getElementById('combo-badge').style.display = empate?'none':'inline-flex';
   document.getElementById('final-j1').textContent = puntosJ1;
   document.getElementById('final-j2').textContent = puntosJ2;
   document.getElementById('final-j1-label').textContent = nombreJ1;
   document.getElementById('final-j2-label').textContent = nombreJ2;
-
   if (!empate) lanzarConfetti();
   mostrar('pantalla-ganador');
 }
@@ -685,11 +663,11 @@ function lanzarConfetti() {
     },i*35);
   }
 }
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
+
+// PWA Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
 </script>
 </body>
 </html>

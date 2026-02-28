@@ -91,24 +91,58 @@
         { "emoji": "💥", "texto": "¿Cuál es tu fetiche más oscuro?" },
         { "emoji": "🎥", "texto": "¿Has visto porno conmigo en mente?" },
         { "emoji": "👻", "texto": "¿Has tenido una experiencia homosexual?" },
-        { "emoji": "📏", "texto": "¿Importa el tamaño?" }
+        { "emoji": "📏", "texto": "¿Importa el tamaño?" },
+        { "emoji": "🩸", "texto": "¿Te excita el dolor durante el sexo?" },
+        { "emoji": "🦶", "texto": "¿Tienes algún fetiche con pies o fluidos?" },
+        { "emoji": "👀", "texto": "¿Te gustaría que te miren mientras lo haces?" },
+        { "emoji": "🔥", "texto": "¿Has tenido sexo con un desconocido?" },
+        { "emoji": "💦", "texto": "¿Te gusta ser degradado/a en la cama?" },
+        { "emoji": "🐶", "texto": "¿Te atrae el petplay?" },
+        { "emoji": "⛓️", "texto": "¿Te gustaría ser esclavo/a sexual?" }
       ],
       "dares": [
-        { "emoji": "🔥", "texto": "Striptease completo con música" },
-        { "emoji": "💀", "texto": "Sé el esclavo/a del ganador por 5 minutos" },
-        { "emoji": "🌀", "texto": "Lap dance completo sin parar" },
-        { "emoji": "🎰", "texto": "El ganador elige lo que quiera por 3 minutos" },
-        { "emoji": "💥", "texto": "Cumplí la fantasía número 1 del ganador ahora mismo" },
-        { "emoji": "🩲", "texto": "Haz un baile desnudo por 1 minuto" },
-        { "emoji": "🔒", "texto": "Deja que te ate las manos por 2 minutos" },
-        { "emoji": "👋", "texto": "Da una nalgada juguetona y recibe una" },
-        { "emoji": "🍆", "texto": "Simula una posición sexual favorita" },
-        { "emoji": "🧊", "texto": "Juega con hielo en zonas sensibles por 30 segundos" },
-        { "emoji": "📹", "texto": "Graba un video corto seductor (borrar después)" },
-        { "emoji": "🕯️", "texto": "Usa cera caliente para un masaje erótico" },
-        { "emoji": "🤐", "texto": "Sé dominado/a por el ganador por 5 minutos" },
-        { "emoji": "🔥", "texto": "Realiza sexo oral en la ducha" },
-        { "emoji": "🪢", "texto": "Usa esposas y compláceme" }
+        { "emoji": "🔥", "texto": "Striptease completo con música y luces bajas, terminando de rodillas" },
+        { "emoji": "💀", "texto": "Sé mi esclavo/a total por 10 minutos: obedece todo sin cuestionar" },
+        { "emoji": "🌀", "texto": "Lap dance extremo desnudo: grinding sin parar hasta que diga 'basta'" },
+        { "emoji": "🎰", "texto": "El ganador elige castigo o placer extremo por 5 minutos (consenso primero)" },
+        { "emoji": "💥", "texto": "Cumplí la fantasía más oscura del ganador ahora mismo" },
+        { "emoji": "🩲", "texto": "Edging hardcore: tócate hasta el borde 5 veces, sin acabar (denial total)" },
+        { "emoji": "🔒", "texto": "Átame manos y pies, y tortura de placer sin piedad por 7 minutos" },
+        { "emoji": "👋", "texto": "Recibe 15 nalgadas fuertes y agradécelas cada una con 'gracias amo/a'" },
+        { "emoji": "🍆", "texto": "Mantén posición extrema (ej. perrito o misionero atado) mientras te estimulo sin parar" },
+        { "emoji": "🧊", "texto": "Hielo en pezones/genitales + lengua caliente alternando por 1 minuto" },
+        { "emoji": "📹", "texto": "Graba video explícito masturbándote y gimiendo mi nombre (borrar después)" },
+        { 
+          "emoji": "🕯️", 
+          "texto": "Cera caliente en pezones y zonas íntimas (vela low-temp)",
+          "termino": "Wax play",
+          "definicion": "Gotas de cera tibia en piel sensible para calor intenso y placer. Usa velas especiales, prueba en brazo primero y ten consentimiento total."
+        },
+        { "emoji": "🤐", "texto": "Humillación verbal + obediencia: repite frases degradantes por 7 minutos" },
+        { "emoji": "🔥", "texto": "Sexo oral profundo mientras estás atado/a e inmovilizado/a" },
+        { 
+          "emoji": "🪢", 
+          "texto": "Bondage full: átame y úsame como quieras por 5-7 minutos",
+          "termino": "Bondage",
+          "definicion": "Ataduras completas para control total. Siempre con palabra de seguridad y chequeos constantes."
+        },
+        { "emoji": "👅", "texto": "Lame miel/chocolate derretido de todo mi cuerpo desnudo, sin dejar nada" },
+        { 
+          "emoji": "⛓️", 
+          "texto": "Azotes con pala/mano hasta que la piel esté roja y pida clemencia",
+          "termino": "Impact play / Spanking",
+          "definicion": "Golpes controlados para placer-dolor. Empieza suave, sube con consentimiento y límites claros."
+        },
+        { 
+          "emoji": "🐕", 
+          "texto": "Petplay hardcore: gatea, come del piso, obedece órdenes como mascota por 5 min",
+          "termino": "Petplay",
+          "definicion": "Rol de animal sumiso con collar, órdenes y recompensas. Divertido, consensuado y con límites."
+        },
+        { "emoji": "💦", "texto": "Forced orgasm: tócame hasta que acabe múltiples veces sin parar" },
+        { "emoji": "📍", "texto": "Posición imposible/extrema: manténla mientras te estimulo sin piedad" },
+        { "emoji": "🩸", "texto": "Mordidas fuertes dejando marcas visibles en zonas seguras" },
+        { "emoji": "🔗", "texto": "Inmovilízame y edging denial hasta que suplique liberación" }
       ],
       "strips": [
         { "emoji": "👙", "texto": "Quitáte la ropa interior" },
@@ -118,7 +152,8 @@
         { "emoji": "🔥", "texto": "Quitáte la última prenda con un baile" },
         { "emoji": "👐", "texto": "Deja que el ganador te quite una prenda" },
         { "emoji": "😈", "texto": "Quitáte todo y quédate así por 2 rondas" },
-        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" }
+        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" },
+        { "emoji": "👄", "texto": "Quitáte una prenda usando solo la boca" }
       ]
     }
   },
@@ -216,25 +251,63 @@
         { "emoji": "💥", "texto": "¿Cuál es tu fetiche más oscuro?" },
         { "emoji": "🎥", "texto": "¿Has visto porno conmigo en mente?" },
         { "emoji": "📏", "texto": "¿Importa el tamaño?" },
-        { "emoji": "👻", "texto": "¿Tu experiencia más salvaje con múltiples parejas?" }
+        { "emoji": "👻", "texto": "¿Tu experiencia más salvaje con múltiples parejas?" },
+        { "emoji": "🩸", "texto": "¿Te excita el dolor durante el sexo?" },
+        { "emoji": "🦶", "texto": "¿Tienes algún fetiche con pies o fluidos?" },
+        { "emoji": "👀", "texto": "¿Te gustaría que te miren mientras lo haces?" },
+        { "emoji": "🔥", "texto": "¿Has tenido sexo con un desconocido?" },
+        { "emoji": "💦", "texto": "¿Te gusta ser degradado en la cama?" },
+        { "emoji": "🐶", "texto": "¿Te atrae el petplay?" },
+        { "emoji": "⛓️", "texto": "¿Te gustaría ser esclavo sexual?" },
+        { "emoji": "🍑", "texto": "¿Prefieres anal o oral extremo?" }
       ],
       "dares": [
-        { "emoji": "🔥", "texto": "Striptease completo con música" },
-        { "emoji": "💀", "texto": "Sé el esclavo del ganador por 5 minutos" },
-        { "emoji": "🌀", "texto": "Lap dance completo sin parar" },
-        { "emoji": "🎰", "texto": "El ganador elige lo que quiera por 3 minutos" },
-        { "emoji": "💥", "texto": "Cumplí la fantasía número 1 del ganador ahora mismo" },
-        { "emoji": "🩲", "texto": "Haz un baile desnudo por 1 minuto" },
-        { "emoji": "🔒", "texto": "Deja que te ate las manos por 2 minutos" },
-        { "emoji": "👋", "texto": "Da una nalgada juguetona y recibe una" },
-        { "emoji": "🍆", "texto": "Simula una posición sexual favorita" },
-        { "emoji": "🧊", "texto": "Juega con hielo en zonas sensibles por 30 segundos" },
-        { "emoji": "📹", "texto": "Graba un video corto seductor (borrar después)" },
-        { "emoji": "🕯️", "texto": "Usa cera caliente para un masaje erótico" },
-        { "emoji": "🤐", "texto": "Sé dominado por el ganador por 5 minutos" },
-        { "emoji": "🔥", "texto": "Realiza sexo oral en la ducha" },
-        { "emoji": "🪢", "texto": "Usa esposas y compláceme" },
-        { "emoji": "🏃", "texto": "Corre alrededor de la casa en ropa interior" }
+        { "emoji": "🔥", "texto": "Striptease completo con poses provocativas y de rodillas al final" },
+        { "emoji": "💀", "texto": "Sé mi esclavo total por 10 minutos: obedece órdenes sin dudar" },
+        { "emoji": "🌀", "texto": "Lap dance desnudo + grinding intenso en mi regazo" },
+        { "emoji": "🎰", "texto": "El ganador manda castigo/perversión extrema por 5 minutos" },
+        { "emoji": "💥", "texto": "Cumplí mi fantasía más pervertida ahora mismo" },
+        { "emoji": "🩲", "texto": "Edging hardcore: tócate hasta el borde 6 veces, denial total" },
+        { "emoji": "🔒", "texto": "Átame y juega con mi próstata sin piedad" },
+        { "emoji": "👋", "texto": "15 nalgadas fuertes y agradece cada una" },
+        { "emoji": "🍆", "texto": "Mantén posición sumisa extrema mientras te estimulo" },
+        { "emoji": "🧊", "texto": "Hielo en bolas/perineo + lamidas calientes alternando" },
+        { "emoji": "📹", "texto": "Graba video masturbándote gimiendo mi nombre" },
+        { 
+          "emoji": "🕯️", 
+          "texto": "Cera en pecho y genitales",
+          "termino": "Wax play",
+          "definicion": "Cera tibia para sensaciones intensas. Consenso y prueba primero."
+        },
+        { "emoji": "🤐", "texto": "Humillación verbal + obediencia extrema por 7 min" },
+        { "emoji": "🔥", "texto": "Oral profundo mientras estoy atado" },
+        { 
+          "emoji": "🪢", 
+          "texto": "Bondage full y úsame",
+          "termino": "Bondage",
+          "definicion": "Ataduras para control total. Palabra de seguridad obligatoria."
+        },
+        { "emoji": "🏃", "texto": "Corre por la casa desnudo y excitado" },
+        { "emoji": "👅", "texto": "Lame crema de mi cuerpo entero" },
+        { 
+          "emoji": "⛓️", 
+          "texto": "Azotes hasta rojo",
+          "termino": "Spanking",
+          "definicion": "Golpes para placer-dolor. Límites claros."
+        },
+        { 
+          "emoji": "🐕", 
+          "texto": "Petplay: gatea y obedece como cachorro por 5 min" 
+        },
+        { "emoji": "💦", "texto": "Edging + forced orgasm: no pares hasta que acabe" },
+        { "emoji": "📍", "texto": "Posición extrema con estimulación anal intensa" },
+        { "emoji": "🩸", "texto": "Mordidas en cuello y muslos dejando marcas" },
+        { 
+          "emoji": "🍑", 
+          "texto": "Rimming profundo + dedos/prostata",
+          "termino": "Rimming",
+          "definicion": "Lamer el ano intensamente. Higiene extrema y consentimiento."
+        }
       ],
       "strips": [
         { "emoji": "👖", "texto": "Quitáte el pantalón" },
@@ -244,7 +317,8 @@
         { "emoji": "🔥", "texto": "Quitáte la última prenda con un baile" },
         { "emoji": "👐", "texto": "Deja que el ganador te quite una prenda" },
         { "emoji": "😈", "texto": "Quitáte todo y quédate así por 2 rondas" },
-        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" }
+        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" },
+        { "emoji": "👄", "texto": "Quitáte una prenda usando solo la boca" }
       ]
     }
   },
@@ -339,24 +413,56 @@
         { "emoji": "🔗", "texto": "¿Te atrae el BDSM? ¿Qué rol?" },
         { "emoji": "💥", "texto": "¿Cuál es tu fetiche más oscuro?" },
         { "emoji": "🎥", "texto": "¿Has visto porno conmigo en mente?" },
-        { "emoji": "📏", "texto": "¿Importa el tamaño de los juguetes?" }
+        { "emoji": "📏", "texto": "¿Importa el tamaño de los juguetes?" },
+        { "emoji": "🩸", "texto": "¿Te excita el dolor durante el sexo?" },
+        { "emoji": "🦶", "texto": "¿Tienes algún fetiche con pies o fluidos?" },
+        { "emoji": "👀", "texto": "¿Te gustaría que te miren mientras lo haces?" },
+        { "emoji": "🔥", "texto": "¿Has tenido sexo con una desconocida?" },
+        { "emoji": "💦", "texto": "¿Te gusta ser degradada en la cama?" },
+        { "emoji": "🐶", "texto": "¿Te atrae el petplay?" },
+        { "emoji": "⛓️", "texto": "¿Te gustaría ser esclava sexual?" }
       ],
       "dares": [
-        { "emoji": "🔥", "texto": "Striptease completo con música" },
-        { "emoji": "💀", "texto": "Sé la esclava de la ganadora por 5 minutos" },
-        { "emoji": "🌀", "texto": "Lap dance completo sin parar" },
-        { "emoji": "🎰", "texto": "La ganadora elige lo que quiera por 3 minutos" },
-        { "emoji": "💥", "texto": "Cumplí la fantasía número 1 de la ganadora ahora mismo" },
-        { "emoji": "🩲", "texto": "Haz un baile desnuda por 1 minuto" },
-        { "emoji": "🔒", "texto": "Deja que te ate las manos por 2 minutos" },
-        { "emoji": "👋", "texto": "Da una nalgada juguetona y recibe una" },
-        { "emoji": "🍆", "texto": "Simula una posición sexual favorita" },
-        { "emoji": "🧊", "texto": "Juega con hielo en zonas sensibles por 30 segundos" },
-        { "emoji": "📹", "texto": "Graba un video corto seductor (borrar después)" },
-        { "emoji": "🕯️", "texto": "Usa cera caliente para un masaje erótico" },
-        { "emoji": "🤐", "texto": "Sé dominada por la ganadora por 5 minutos" },
-        { "emoji": "🔥", "texto": "Realiza sexo oral en la ducha" },
-        { "emoji": "🪢", "texto": "Usa esposas y compláceme" }
+        { "emoji": "🔥", "texto": "Striptease sensual y lento terminando de rodillas" },
+        { "emoji": "💀", "texto": "Sé mi esclava por 10 minutos: obedece todo" },
+        { "emoji": "🌀", "texto": "Lap dance desnuda + grinding clítoris contra clítoris" },
+        { "emoji": "🎰", "texto": "Elige castigo o placer extremo por 5 minutos" },
+        { "emoji": "💥", "texto": "Cumple mi fantasía más loca ahora" },
+        { "emoji": "🩲", "texto": "Edging clítoris hardcore: hasta el borde 6 veces, sin acabar" },
+        { "emoji": "🔒", "texto": "Átame y juega con mis zonas sin piedad" },
+        { "emoji": "👋", "texto": "Nalgadas fuertes hasta rojo y agradece" },
+        { "emoji": "🍆", "texto": "Mantén posición tribbing intensa mientras te estimulo" },
+        { "emoji": "🧊", "texto": "Hielo en clítoris/pechos + lengua caliente" },
+        { "emoji": "📹", "texto": "Video masturbación explícita gimiendo" },
+        { 
+          "emoji": "🕯️", 
+          "texto": "Cera en pezones y labios vaginales",
+          "termino": "Wax play",
+          "definicion": "Cera tibia para calor placentero. Consenso total."
+        },
+        { "emoji": "🤐", "texto": "Dominada con humillación verbal y órdenes" },
+        { "emoji": "🔥", "texto": "Oral profundo en la ducha" },
+        { 
+          "emoji": "🪢", 
+          "texto": "Bondage y compláceme",
+          "termino": "Bondage",
+          "definicion": "Ataduras para entrega total. Seguridad primero."
+        },
+        { "emoji": "👅", "texto": "Lame miel de todo mi cuerpo" },
+        { 
+          "emoji": "⛓️", 
+          "texto": "Azotes intensos",
+          "termino": "Spanking",
+          "definicion": "Golpes para placer-dolor. Límites claros."
+        },
+        { 
+          "emoji": "🐕", 
+          "texto": "Petplay: sé mi gatita sumisa por 5 min" 
+        },
+        { "emoji": "💦", "texto": "Edging hasta casi squirtear sin parar" },
+        { "emoji": "📍", "texto": "Posición extrema con juguete intenso" },
+        { "emoji": "🩸", "texto": "Mordidas en pechos y muslos" },
+        { "emoji": "🔗", "texto": "Inmovilízame y edging denial hasta suplicar" }
       ],
       "strips": [
         { "emoji": "👙", "texto": "Quitáte el corpiño" },
@@ -366,7 +472,8 @@
         { "emoji": "🔥", "texto": "Quitáte la última prenda con un baile" },
         { "emoji": "👐", "texto": "Deja que la ganadora te quite una prenda" },
         { "emoji": "😈", "texto": "Quitáte todo y quédate así por 2 rondas" },
-        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" }
+        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" },
+        { "emoji": "👄", "texto": "Quitáte una prenda usando solo la boca" }
       ]
     }
   }
