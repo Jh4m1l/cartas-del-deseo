@@ -1,0 +1,21 @@
+{
+  "name": "Las Cartas del Deseo 🃏",
+  "short_name": "Cartas Deseo",
+  "start_url": "/cartas-del-deseo/index.html",
+  "display": "fullscreen",
+  "background_color": "#0a0007",
+  "theme_color": "#c0392b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icono.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icono.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
