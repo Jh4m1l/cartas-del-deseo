@@ -1,65 +1,373 @@
 {
-  "1": {
-    "truths": [
-      { "emoji": "💭", "texto": "¿Tu fantasía más inocente conmigo?" },
-      { "emoji": "👄", "texto": "¿Qué parte de mi cuerpo te gusta más besarla?" },
-      { "emoji": "😊", "texto": "¿Qué fue lo primero que te atrajo de mí?" },
-      { "emoji": "🌹", "texto": "¿Cuál es tu recuerdo favorito de nosotros?" },
-      { "emoji": "💫", "texto": "¿Qué cosa mía te pone nervioso/a?" }
-    ],
-    "dares": [
-      { "emoji": "💋", "texto": "Beso en la mejilla durante 5 segundos" },
-      { "emoji": "💆", "texto": "Masaje en los hombros por 30 segundos" },
-      { "emoji": "💃", "texto": "Baile pegadito por 20 segundos" },
-      { "emoji": "🤗", "texto": "Abrazo fuerte por 15 segundos sin separarse" },
-      { "emoji": "👁️", "texto": "Mirarse a los ojos por 30 segundos sin reírse" }
-    ],
-    "strips": [
-      { "emoji": "🧦", "texto": "Quitáte los calcetines" },
-      { "emoji": "⌚", "texto": "Quitáte el reloj o pulsera" },
-      { "emoji": "💍", "texto": "Quitáte un accesorio a elección" }
-    ]
+  "hetero": {
+    "1": {
+      "truths": [
+        { "emoji": "💭", "texto": "¿Qué parte de mi cuerpo te gusta más?" },
+        { "emoji": "👄", "texto": "¿Cuál es tu fantasía más inocente conmigo?" },
+        { "emoji": "🌹", "texto": "¿Qué fue lo primero que te atrajo de mí?" },
+        { "emoji": "💫", "texto": "¿Qué cosa mía te pone nervioso/a?" },
+        { "emoji": "😊", "texto": "¿Cuál es tu recuerdo favorito de nosotros?" },
+        { "emoji": "❤️", "texto": "¿Cuál es tu lenguaje del amor?" },
+        { "emoji": "😘", "texto": "¿Qué piensas secretamente que me da asco?" },
+        { "emoji": "🌟", "texto": "¿Cuándo supiste que te atraía?" },
+        { "emoji": "🎁", "texto": "¿Qué regalo romántico me darías?" },
+        { "emoji": "😉", "texto": "¿Has tenido un crush secreto en alguien famoso?" },
+        { "emoji": "📖", "texto": "¿Qué libro o película describe nuestra relación?" }
+      ],
+      "dares": [
+        { "emoji": "💋", "texto": "Beso en la mejilla durante 5 segundos" },
+        { "emoji": "💆", "texto": "Masaje en los hombros por 30 segundos" },
+        { "emoji": "💃", "texto": "Baile pegadito por 20 segundos" },
+        { "emoji": "🤗", "texto": "Abrazo fuerte por 15 segundos sin separarse" },
+        { "emoji": "👁️", "texto": "Mirarse a los ojos por 30 segundos sin reírse" },
+        { "emoji": "🕺", "texto": "Haz un baile tonto para hacerme reír" },
+        { "emoji": "📞", "texto": "Llama a un amigo y dile algo embarazoso" },
+        { "emoji": "🍦", "texto": "Come algo de mi mano sin usar las tuyas" },
+        { "emoji": "🎤", "texto": "Canta una canción romántica mirándome" },
+        { "emoji": "🤳", "texto": "Toma una selfie graciosa juntos" },
+        { "emoji": "🍴", "texto": "Come una cucharada de condimento elegido por el grupo" }
+      ],
+      "strips": [
+        { "emoji": "🧦", "texto": "Quitáte los calcetines" },
+        { "emoji": "⌚", "texto": "Quitáte el reloj o pulsera" },
+        { "emoji": "💍", "texto": "Quitáte un accesorio a elección" },
+        { "emoji": "🧣", "texto": "Quitáte la bufanda o corbata" },
+        { "emoji": "🕶️", "texto": "Quitáte las gafas o lentes" },
+        { "emoji": "👒", "texto": "Quitáte el sombrero o gorra" },
+        { "emoji": "👟", "texto": "Quitáte los zapatos" }
+      ]
+    },
+    "2": {
+      "truths": [
+        { "emoji": "🔥", "texto": "¿Qué te excita más que te haga?" },
+        { "emoji": "😏", "texto": "¿Alguna vez pensaste en mí mientras estabas solo/a?" },
+        { "emoji": "🌶️", "texto": "¿Qué cosa nunca me pediste pero querés?" },
+        { "emoji": "💦", "texto": "¿Cuál es tu zona más sensible?" },
+        { "emoji": "🎭", "texto": "¿Algún rol que quieras que juguemos?" },
+        { "emoji": "📸", "texto": "¿Te has tomado fotos desnudo/a?" },
+        { "emoji": "😈", "texto": "¿Has sexteado con alguien?" },
+        { "emoji": "⏱️", "texto": "¿Cuánto tiempo duró tu encuentro más corto?" },
+        { "emoji": "🏞️", "texto": "¿Qué es lo más sucio que has hecho en público?" },
+        { "emoji": "🛏️", "texto": "¿Has fingido un orgasmo?" },
+        { "emoji": "👀", "texto": "¿Has afeitado tu vello púbico?" },
+        { "emoji": "🌙", "texto": "¿Cuál es tu sueño sexual más loco?" }
+      ],
+      "dares": [
+        { "emoji": "💋", "texto": "Beso francés de 1 minuto completo" },
+        { "emoji": "👅", "texto": "Lamida lenta en el cuello o la oreja" },
+        { "emoji": "🤏", "texto": "Manoseo por encima de la ropa por 30 segundos" },
+        { "emoji": "🔐", "texto": "Susurrále al oído lo que querés hacerle esta noche" },
+        { "emoji": "📸", "texto": "Foto seductora que queda en el celu del ganador" },
+        { "emoji": "🍹", "texto": "Coloca un líquido en el ombligo y lámelo" },
+        { "emoji": "👐", "texto": "Toca las tetas o el pecho por 20 segundos" },
+        { "emoji": "💃", "texto": "Haz un twerk corto en mi regazo" },
+        { "emoji": "🔥", "texto": "Besa mi zona favorita por 15 segundos" },
+        { "emoji": "🎲", "texto": "Elige una prenda y quítamela con los dientes" },
+        { "emoji": "🍓", "texto": "Come una fruta de mi cuerpo sin manos" },
+        { "emoji": "🧊", "texto": "Pon un cubo de hielo en tu ropa interior por 1 minuto" }
+      ],
+      "strips": [
+        { "emoji": "👕", "texto": "Quitáte la camiseta" },
+        { "emoji": "👖", "texto": "Quitáte el pantalón o falda" },
+        { "emoji": "🎽", "texto": "Quitáte una prenda a elección del ganador" },
+        { "emoji": "🩲", "texto": "Quitáte los shorts o leggins" },
+        { "emoji": "👗", "texto": "Quitáte el vestido o suéter" },
+        { "emoji": "🧥", "texto": "Quitáte la chaqueta o chaleco" },
+        { "emoji": "👠", "texto": "Quitáte los zapatos o botas" },
+        { "emoji": "🧤", "texto": "Quitáte los guantes o bufanda" }
+      ]
+    },
+    "3": {
+      "truths": [
+        { "emoji": "🌋", "texto": "¿Qué posición querés probar ahora mismo?" },
+        { "emoji": "😈", "texto": "¿Tu kink secreto conmigo?" },
+        { "emoji": "🔞", "texto": "¿Qué es lo más atrevido que pensaste hacerme?" },
+        { "emoji": "💣", "texto": "¿Qué fantasía nunca te animaste a pedir?" },
+        { "emoji": "🎯", "texto": "¿Cómo querés que termine esta noche?" },
+        { "emoji": "👥", "texto": "¿Qué piensas de hacer un trío?" },
+        { "emoji": "🛡️", "texto": "¿Has usado juguetes sexuales? ¿Cuáles?" },
+        { "emoji": "📍", "texto": "¿Lugar más loco donde lo has hecho?" },
+        { "emoji": "🔗", "texto": "¿Te atrae el BDSM? ¿Qué rol?" },
+        { "emoji": "💥", "texto": "¿Cuál es tu fetiche más oscuro?" },
+        { "emoji": "🎥", "texto": "¿Has visto porno conmigo en mente?" },
+        { "emoji": "👻", "texto": "¿Has tenido una experiencia homosexual?" },
+        { "emoji": "📏", "texto": "¿Importa el tamaño?" }
+      ],
+      "dares": [
+        { "emoji": "🔥", "texto": "Striptease completo con música" },
+        { "emoji": "💀", "texto": "Sé el esclavo/a del ganador por 5 minutos" },
+        { "emoji": "🌀", "texto": "Lap dance completo sin parar" },
+        { "emoji": "🎰", "texto": "El ganador elige lo que quiera por 3 minutos" },
+        { "emoji": "💥", "texto": "Cumplí la fantasía número 1 del ganador ahora mismo" },
+        { "emoji": "🩲", "texto": "Haz un baile desnudo por 1 minuto" },
+        { "emoji": "🔒", "texto": "Deja que te ate las manos por 2 minutos" },
+        { "emoji": "👋", "texto": "Da una nalgada juguetona y recibe una" },
+        { "emoji": "🍆", "texto": "Simula una posición sexual favorita" },
+        { "emoji": "🧊", "texto": "Juega con hielo en zonas sensibles por 30 segundos" },
+        { "emoji": "📹", "texto": "Graba un video corto seductor (borrar después)" },
+        { "emoji": "🕯️", "texto": "Usa cera caliente para un masaje erótico" },
+        { "emoji": "🤐", "texto": "Sé dominado/a por el ganador por 5 minutos" },
+        { "emoji": "🔥", "texto": "Realiza sexo oral en la ducha" },
+        { "emoji": "🪢", "texto": "Usa esposas y compláceme" }
+      ],
+      "strips": [
+        { "emoji": "👙", "texto": "Quitáte la ropa interior" },
+        { "emoji": "🌋", "texto": "Quitáte todo lo que queda" },
+        { "emoji": "👑", "texto": "El ganador decide qué prenda y cómo quitártela" },
+        { "emoji": "🩱", "texto": "Quitáte el sujetador o boxer" },
+        { "emoji": "🔥", "texto": "Quitáte la última prenda con un baile" },
+        { "emoji": "👐", "texto": "Deja que el ganador te quite una prenda" },
+        { "emoji": "😈", "texto": "Quitáte todo y quédate así por 2 rondas" },
+        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" }
+      ]
+    }
   },
-  "2": {
-    "truths": [
-      { "emoji": "🔥", "texto": "¿Qué te excita más que te haga?" },
-      { "emoji": "😏", "texto": "¿Alguna vez pensaste en mí mientras estabas solo/a?" },
-      { "emoji": "🌶️", "texto": "¿Qué cosa nunca me pediste pero querés?" },
-      { "emoji": "💦", "texto": "¿Cuál es tu zona más sensible?" },
-      { "emoji": "🎭", "texto": "¿Algún rol que quieras que juguemos?" }
-    ],
-    "dares": [
-      { "emoji": "💋", "texto": "Beso francés de 1 minuto completo" },
-      { "emoji": "👅", "texto": "Lamida lenta en el cuello o la oreja" },
-      { "emoji": "🤏", "texto": "Manoseo por encima de la ropa por 30 segundos" },
-      { "emoji": "🔐", "texto": "Susurrále al oído lo que querés hacerle esta noche" },
-      { "emoji": "📸", "texto": "Foto seductora que queda en el celu del ganador" }
-    ],
-    "strips": [
-      { "emoji": "👕", "texto": "Quitáte la camiseta" },
-      { "emoji": "👖", "texto": "Quitáte el pantalón o falda" },
-      { "emoji": "🎽", "texto": "Quitáte una prenda a elección del ganador" }
-    ]
+  "gay": {
+    "1": {
+      "truths": [
+        { "emoji": "💭", "texto": "¿Qué parte de mi cuerpo te gusta más?" },
+        { "emoji": "👄", "texto": "¿Cuál es tu fantasía más inocente conmigo?" },
+        { "emoji": "🌹", "texto": "¿Qué fue lo primero que te atrajo de mí?" },
+        { "emoji": "💫", "texto": "¿Preferís ser activo o pasivo con alguien como yo?" },
+        { "emoji": "😊", "texto": "¿Cuál es tu recuerdo favorito de nosotros?" },
+        { "emoji": "❤️", "texto": "¿Cuál es tu lenguaje del amor?" },
+        { "emoji": "😘", "texto": "¿Qué piensas secretamente que me da asco?" },
+        { "emoji": "🌟", "texto": "¿Cuándo supiste que te atraía?" },
+        { "emoji": "🎁", "texto": "¿Qué regalo romántico me darías?" },
+        { "emoji": "😉", "texto": "¿Has tenido un crush secreto en alguien famoso?" },
+        { "emoji": "📖", "texto": "¿Qué libro o película describe nuestra relación?" }
+      ],
+      "dares": [
+        { "emoji": "💋", "texto": "Beso en la mejilla durante 5 segundos" },
+        { "emoji": "💆", "texto": "Masaje en los hombros por 30 segundos" },
+        { "emoji": "💪", "texto": "Acariciá sus brazos y pecho por 20 segundos" },
+        { "emoji": "🤗", "texto": "Abrazo fuerte por 15 segundos sin separarse" },
+        { "emoji": "👁️", "texto": "Mirarse a los ojos por 30 segundos sin reírse" },
+        { "emoji": "🕺", "texto": "Haz un baile tonto para hacerme reír" },
+        { "emoji": "📞", "texto": "Llama a un amigo y dile algo embarazoso" },
+        { "emoji": "🍦", "texto": "Come algo de mi mano sin usar las tuyas" },
+        { "emoji": "🎤", "texto": "Canta una canción romántica mirándome" },
+        { "emoji": "🤳", "texto": "Toma una selfie graciosa juntos" },
+        { "emoji": "🍴", "texto": "Come una cucharada de condimento elegido por el grupo" }
+      ],
+      "strips": [
+        { "emoji": "🧦", "texto": "Quitáte los calcetines" },
+        { "emoji": "⌚", "texto": "Quitáte el reloj o pulsera" },
+        { "emoji": "👕", "texto": "Quitáte la camiseta lentamente" },
+        { "emoji": "🧣", "texto": "Quitáte la bufanda o corbata" },
+        { "emoji": "🕶️", "texto": "Quitáte las gafas o lentes" },
+        { "emoji": "👒", "texto": "Quitáte el sombrero o gorra" },
+        { "emoji": "👟", "texto": "Quitáte los zapatos" }
+      ]
+    },
+    "2": {
+      "truths": [
+        { "emoji": "🔥", "texto": "¿Qué te excita más que te haga?" },
+        { "emoji": "😏", "texto": "¿Activo, pasivo o versátil esta noche?" },
+        { "emoji": "🌶️", "texto": "¿Qué cosa nunca me pediste pero querés?" },
+        { "emoji": "💦", "texto": "¿Cuál es tu zona más sensible?" },
+        { "emoji": "🎭", "texto": "¿Algún rol que quieras que juguemos?" },
+        { "emoji": "📸", "texto": "¿Te has tomado fotos desnudo?" },
+        { "emoji": "😈", "texto": "¿Has sexteado con alguien?" },
+        { "emoji": "⏱️", "texto": "¿Cuánto tiempo duró tu encuentro más corto?" },
+        { "emoji": "🏞️", "texto": "¿Qué es lo más sucio que has hecho en público?" },
+        { "emoji": "🛏️", "texto": "¿Has fingido un orgasmo?" },
+        { "emoji": "👀", "texto": "¿Has afeitado tu vello púbico?" },
+        { "emoji": "🌙", "texto": "¿Cuál es tu sueño sexual más loco?" },
+        { "emoji": "👥", "texto": "¿Número máximo de hombres en 24 horas?" }
+      ],
+      "dares": [
+        { "emoji": "💋", "texto": "Beso francés de 1 minuto completo" },
+        { "emoji": "👅", "texto": "Lamida lenta en el cuello o la oreja" },
+        { "emoji": "🤏", "texto": "Manoseo por encima de la ropa por 30 segundos" },
+        { "emoji": "🔐", "texto": "Susurrále al oído lo que querés hacerle esta noche" },
+        { "emoji": "📸", "texto": "Foto seductora que queda en el celu del ganador" },
+        { "emoji": "🍹", "texto": "Coloca un líquido en el ombligo y lámelo" },
+        { "emoji": "👐", "texto": "Toca el pecho por 20 segundos" },
+        { "emoji": "💃", "texto": "Haz un twerk corto en mi regazo" },
+        { "emoji": "🔥", "texto": "Besa mi zona favorita por 15 segundos" },
+        { "emoji": "🎲", "texto": "Elige una prenda y quítamela con los dientes" },
+        { "emoji": "🍓", "texto": "Come una fruta de mi cuerpo sin manos" },
+        { "emoji": "🧊", "texto": "Pon un cubo de hielo en tu ropa interior por 1 minuto" },
+        { "emoji": "🏊", "texto": "Da una vuelta a la piscina desnudo" }
+      ],
+      "strips": [
+        { "emoji": "👕", "texto": "Quitáte la camiseta" },
+        { "emoji": "👖", "texto": "Quitáte el pantalón" },
+        { "emoji": "🎽", "texto": "Quitáte una prenda a elección del ganador" },
+        { "emoji": "🩲", "texto": "Quitáte los shorts" },
+        { "emoji": "🧥", "texto": "Quitáte la chaqueta o chaleco" },
+        { "emoji": "👠", "texto": "Quitáte los zapatos o botas" },
+        { "emoji": "🧤", "texto": "Quitáte los guantes" },
+        { "emoji": "🩳", "texto": "Quitáte los boxers lentamente" }
+      ]
+    },
+    "3": {
+      "truths": [
+        { "emoji": "🌋", "texto": "¿Qué posición querés probar ahora mismo?" },
+        { "emoji": "😈", "texto": "¿Tu kink secreto conmigo?" },
+        { "emoji": "🔞", "texto": "¿Qué es lo más atrevido que pensaste hacerme?" },
+        { "emoji": "💣", "texto": "¿Qué fantasía nunca te animaste a pedir?" },
+        { "emoji": "🎯", "texto": "¿Cómo querés que termine esta noche?" },
+        { "emoji": "👥", "texto": "¿Qué piensas de hacer un trío?" },
+        { "emoji": "🛡️", "texto": "¿Has usado juguetes sexuales? ¿Cuáles?" },
+        { "emoji": "📍", "texto": "¿Lugar más loco donde lo has hecho?" },
+        { "emoji": "🔗", "texto": "¿Te atrae el BDSM? ¿Qué rol?" },
+        { "emoji": "💥", "texto": "¿Cuál es tu fetiche más oscuro?" },
+        { "emoji": "🎥", "texto": "¿Has visto porno conmigo en mente?" },
+        { "emoji": "📏", "texto": "¿Importa el tamaño?" },
+        { "emoji": "👻", "texto": "¿Tu experiencia más salvaje con múltiples parejas?" }
+      ],
+      "dares": [
+        { "emoji": "🔥", "texto": "Striptease completo con música" },
+        { "emoji": "💀", "texto": "Sé el esclavo del ganador por 5 minutos" },
+        { "emoji": "🌀", "texto": "Lap dance completo sin parar" },
+        { "emoji": "🎰", "texto": "El ganador elige lo que quiera por 3 minutos" },
+        { "emoji": "💥", "texto": "Cumplí la fantasía número 1 del ganador ahora mismo" },
+        { "emoji": "🩲", "texto": "Haz un baile desnudo por 1 minuto" },
+        { "emoji": "🔒", "texto": "Deja que te ate las manos por 2 minutos" },
+        { "emoji": "👋", "texto": "Da una nalgada juguetona y recibe una" },
+        { "emoji": "🍆", "texto": "Simula una posición sexual favorita" },
+        { "emoji": "🧊", "texto": "Juega con hielo en zonas sensibles por 30 segundos" },
+        { "emoji": "📹", "texto": "Graba un video corto seductor (borrar después)" },
+        { "emoji": "🕯️", "texto": "Usa cera caliente para un masaje erótico" },
+        { "emoji": "🤐", "texto": "Sé dominado por el ganador por 5 minutos" },
+        { "emoji": "🔥", "texto": "Realiza sexo oral en la ducha" },
+        { "emoji": "🪢", "texto": "Usa esposas y compláceme" },
+        { "emoji": "🏃", "texto": "Corre alrededor de la casa en ropa interior" }
+      ],
+      "strips": [
+        { "emoji": "👖", "texto": "Quitáte el pantalón" },
+        { "emoji": "🌋", "texto": "Quitáte todo lo que queda" },
+        { "emoji": "👑", "texto": "El ganador decide qué prenda y cómo quitártela" },
+        { "emoji": "🩱", "texto": "Quitáte los boxers" },
+        { "emoji": "🔥", "texto": "Quitáte la última prenda con un baile" },
+        { "emoji": "👐", "texto": "Deja que el ganador te quite una prenda" },
+        { "emoji": "😈", "texto": "Quitáte todo y quédate así por 2 rondas" },
+        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" }
+      ]
+    }
   },
-  "3": {
-    "truths": [
-      { "emoji": "🌋", "texto": "¿Qué posición querés probar ahora mismo?" },
-      { "emoji": "😈", "texto": "¿Tu kink secreto conmigo?" },
-      { "emoji": "🔞", "texto": "¿Qué es lo más atrevido que pensaste hacerme?" },
-      { "emoji": "💣", "texto": "¿Qué fantasía nunca te animaste a pedir?" },
-      { "emoji": "🎯", "texto": "¿Cómo querés que termine esta noche?" }
-    ],
-    "dares": [
-      { "emoji": "🔥", "texto": "Striptease completo con música" },
-      { "emoji": "💀", "texto": "Sé el esclavo/a del ganador por 5 minutos" },
-      { "emoji": "🌀", "texto": "Lap dance completo sin parar" },
-      { "emoji": "🎰", "texto": "El ganador elige lo que quiera por 3 minutos" },
-      { "emoji": "💥", "texto": "Cumplí la fantasía número 1 del ganador ahora mismo" }
-    ],
-    "strips": [
-      { "emoji": "👙", "texto": "Quitáte la ropa interior" },
-      { "emoji": "🌋", "texto": "Quitáte todo lo que queda" },
-      { "emoji": "👑", "texto": "El ganador decide qué prenda y cómo quitártela" }
-    ]
+  "lesbi": {
+    "1": {
+      "truths": [
+        { "emoji": "💭", "texto": "¿Qué parte de mi cuerpo te gusta más?" },
+        { "emoji": "👄", "texto": "¿Cuál es tu fantasía más inocente conmigo?" },
+        { "emoji": "🌹", "texto": "¿Qué fue lo primero que te atrajo de mí?" },
+        { "emoji": "💫", "texto": "¿Qué cosa mía te pone nerviosa?" },
+        { "emoji": "😊", "texto": "¿Cuál es tu recuerdo favorito de nosotras?" },
+        { "emoji": "❤️", "texto": "¿Cuál es tu lenguaje del amor?" },
+        { "emoji": "😘", "texto": "¿Qué piensas secretamente que me da asco?" },
+        { "emoji": "🌟", "texto": "¿Cuándo supiste que te atraía?" },
+        { "emoji": "🎁", "texto": "¿Qué regalo romántico me darías?" },
+        { "emoji": "😉", "texto": "¿Has tenido un crush secreto en alguien famosa?" },
+        { "emoji": "📖", "texto": "¿Qué libro o película describe nuestra relación?" }
+      ],
+      "dares": [
+        { "emoji": "💋", "texto": "Beso en la mejilla durante 5 segundos" },
+        { "emoji": "💆", "texto": "Masaje en los hombros por 30 segundos" },
+        { "emoji": "💃", "texto": "Baile pegadito por 20 segundos" },
+        { "emoji": "🤗", "texto": "Abrazo fuerte por 15 segundos sin separarse" },
+        { "emoji": "👁️", "texto": "Mirarse a los ojos por 30 segundos sin reírse" },
+        { "emoji": "🕺", "texto": "Haz un baile tonto para hacerme reír" },
+        { "emoji": "📞", "texto": "Llama a una amiga y dile algo embarazoso" },
+        { "emoji": "🍦", "texto": "Come algo de mi mano sin usar las tuyas" },
+        { "emoji": "🎤", "texto": "Canta una canción romántica mirándome" },
+        { "emoji": "🤳", "texto": "Toma una selfie graciosa juntas" },
+        { "emoji": "🍴", "texto": "Come una cucharada de condimento elegido por el grupo" }
+      ],
+      "strips": [
+        { "emoji": "🧦", "texto": "Quitáte los calcetines" },
+        { "emoji": "⌚", "texto": "Quitáte el reloj o pulsera" },
+        { "emoji": "💍", "texto": "Quitáte un accesorio a elección" },
+        { "emoji": "🧣", "texto": "Quitáte la bufanda o corbata" },
+        { "emoji": "🕶️", "texto": "Quitáte las gafas o lentes" },
+        { "emoji": "👒", "texto": "Quitáte el sombrero o gorra" },
+        { "emoji": "👟", "texto": "Quitáte los zapatos" }
+      ]
+    },
+    "2": {
+      "truths": [
+        { "emoji": "🔥", "texto": "¿Qué te excita más que te haga?" },
+        { "emoji": "😏", "texto": "¿Alguna vez pensaste en mí mientras estabas sola?" },
+        { "emoji": "🌶️", "texto": "¿Qué cosa nunca me pediste pero querés?" },
+        { "emoji": "💦", "texto": "¿Cuál es tu zona más sensible?" },
+        { "emoji": "🎭", "texto": "¿Algún rol que quieras que juguemos?" },
+        { "emoji": "📸", "texto": "¿Te has tomado fotos desnuda?" },
+        { "emoji": "😈", "texto": "¿Has sexteado con alguien?" },
+        { "emoji": "⏱️", "texto": "¿Cuánto tiempo duró tu encuentro más corto?" },
+        { "emoji": "🏞️", "texto": "¿Qué es lo más sucio que has hecho en público?" },
+        { "emoji": "🛏️", "texto": "¿Has fingido un orgasmo?" },
+        { "emoji": "👀", "texto": "¿Has afeitado tu vello púbico?" },
+        { "emoji": "🌙", "texto": "¿Cuál es tu sueño sexual más loco?" }
+      ],
+      "dares": [
+        { "emoji": "💋", "texto": "Beso francés de 1 minuto completo" },
+        { "emoji": "👅", "texto": "Lamida lenta en el cuello o la oreja" },
+        { "emoji": "🤏", "texto": "Manoseo por encima de la ropa por 30 segundos" },
+        { "emoji": "🔐", "texto": "Susurrále al oído lo que querés hacerle esta noche" },
+        { "emoji": "📸", "texto": "Foto seductora que queda en el celu del ganador" },
+        { "emoji": "🍹", "texto": "Coloca un líquido en el ombligo y lámelo" },
+        { "emoji": "👐", "texto": "Toca las tetas por 20 segundos" },
+        { "emoji": "💃", "texto": "Haz un twerk corto en mi regazo" },
+        { "emoji": "🔥", "texto": "Besa mi zona favorita por 15 segundos" },
+        { "emoji": "🎲", "texto": "Elige una prenda y quítamela con los dientes" },
+        { "emoji": "🍓", "texto": "Come una fruta de mi cuerpo sin manos" },
+        { "emoji": "🧊", "texto": "Pon un cubo de hielo en tu ropa interior por 1 minuto" }
+      ],
+      "strips": [
+        { "emoji": "👚", "texto": "Quitáte la blusa o camiseta" },
+        { "emoji": "👖", "texto": "Quitáte el pantalón o falda" },
+        { "emoji": "🎽", "texto": "Quitáte una prenda a elección de la ganadora" },
+        { "emoji": "🩲", "texto": "Quitáte los shorts o leggins" },
+        { "emoji": "👗", "texto": "Quitáte el vestido o suéter" },
+        { "emoji": "🧥", "texto": "Quitáte la chaqueta o chaleco" },
+        { "emoji": "👠", "texto": "Quitáte los zapatos o botas" },
+        { "emoji": "🧤", "texto": "Quitáte los guantes o bufanda" }
+      ]
+    },
+    "3": {
+      "truths": [
+        { "emoji": "🌋", "texto": "¿Qué posición querés probar ahora mismo?" },
+        { "emoji": "😈", "texto": "¿Tu kink secreto conmigo?" },
+        { "emoji": "🔞", "texto": "¿Qué es lo más atrevido que pensaste hacerme?" },
+        { "emoji": "💣", "texto": "¿Qué fantasía nunca te animaste a pedir?" },
+        { "emoji": "🎯", "texto": "¿Cómo querés que termine esta noche?" },
+        { "emoji": "👥", "texto": "¿Qué piensas de hacer un trío?" },
+        { "emoji": "🛡️", "texto": "¿Has usado juguetes sexuales? ¿Cuáles?" },
+        { "emoji": "📍", "texto": "¿Lugar más loco donde lo has hecho?" },
+        { "emoji": "🔗", "texto": "¿Te atrae el BDSM? ¿Qué rol?" },
+        { "emoji": "💥", "texto": "¿Cuál es tu fetiche más oscuro?" },
+        { "emoji": "🎥", "texto": "¿Has visto porno conmigo en mente?" },
+        { "emoji": "📏", "texto": "¿Importa el tamaño de los juguetes?" }
+      ],
+      "dares": [
+        { "emoji": "🔥", "texto": "Striptease completo con música" },
+        { "emoji": "💀", "texto": "Sé la esclava de la ganadora por 5 minutos" },
+        { "emoji": "🌀", "texto": "Lap dance completo sin parar" },
+        { "emoji": "🎰", "texto": "La ganadora elige lo que quiera por 3 minutos" },
+        { "emoji": "💥", "texto": "Cumplí la fantasía número 1 de la ganadora ahora mismo" },
+        { "emoji": "🩲", "texto": "Haz un baile desnuda por 1 minuto" },
+        { "emoji": "🔒", "texto": "Deja que te ate las manos por 2 minutos" },
+        { "emoji": "👋", "texto": "Da una nalgada juguetona y recibe una" },
+        { "emoji": "🍆", "texto": "Simula una posición sexual favorita" },
+        { "emoji": "🧊", "texto": "Juega con hielo en zonas sensibles por 30 segundos" },
+        { "emoji": "📹", "texto": "Graba un video corto seductor (borrar después)" },
+        { "emoji": "🕯️", "texto": "Usa cera caliente para un masaje erótico" },
+        { "emoji": "🤐", "texto": "Sé dominada por la ganadora por 5 minutos" },
+        { "emoji": "🔥", "texto": "Realiza sexo oral en la ducha" },
+        { "emoji": "🪢", "texto": "Usa esposas y compláceme" }
+      ],
+      "strips": [
+        { "emoji": "👙", "texto": "Quitáte el corpiño" },
+        { "emoji": "🌋", "texto": "Quitáte todo lo que queda" },
+        { "emoji": "👑", "texto": "La ganadora decide qué prenda y cómo quitártela" },
+        { "emoji": "🩱", "texto": "Quitáte el sujetador" },
+        { "emoji": "🔥", "texto": "Quitáte la última prenda con un baile" },
+        { "emoji": "👐", "texto": "Deja que la ganadora te quite una prenda" },
+        { "emoji": "😈", "texto": "Quitáte todo y quédate así por 2 rondas" },
+        { "emoji": "🦶", "texto": "Quitáte la ropa interior con los pies" }
+      ]
+    }
   }
 }

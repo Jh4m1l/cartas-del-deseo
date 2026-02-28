@@ -3,10 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#c0392b">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Cartas Deseo">
 <title>Las Cartas del Deseo 🃏</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -57,10 +53,16 @@
   .b2 { background: rgba(192,57,43,0.2); color: #ff6b6b; border: 1px solid rgba(192,57,43,0.4); }
   .b3 { background: rgba(120,0,0,0.3); color: #ff4444; border: 1px solid rgba(120,0,0,0.5); }
 
-  .nombres-grid { display: flex; gap: 8px; width: 100%; margin-bottom: 20px; }
+  .nombres-grid { display: flex; gap: 8px; width: 100%; margin-bottom: 10px; }
   .input-nombre { flex: 1; padding: 12px 14px; background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-size: 0.9rem; font-family: 'DM Sans', sans-serif; outline: none; transition: all 0.2s; text-align: center; }
   .input-nombre::placeholder { color: rgba(255,255,255,0.25); }
   .input-nombre:focus { border-color: var(--dorado); background: rgba(240,192,64,0.07); }
+
+  .sexo-grid { display: flex; gap: 8px; width: 100%; margin-bottom: 20px; }
+  .sexo-jugador { flex: 1; display: flex; gap: 6px; justify-content: center; }
+  .btn-sexo { flex: 1; padding: 8px 4px; background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08); border-radius: 10px; color: rgba(255,255,255,0.5); font-size: 0.8rem; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
+  .btn-sexo:hover { border-color: var(--dorado); color: white; }
+  .btn-sexo.sel { border-color: var(--dorado); color: white; background: rgba(240,192,64,0.12); }
 
   .pts-grid { display: flex; gap: 8px; width: 100%; margin-bottom: 28px; }
   .btn-pts { flex: 1; padding: 12px 6px; background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08); border-radius: 12px; color: rgba(255,255,255,0.6); font-size: 0.78rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; line-height: 1.3; }
@@ -256,10 +258,20 @@
     </div>
   </div>
 
-  <p class="seccion-label">Nombres</p>
+  <p class="seccion-label">Nombres y sexo</p>
   <div class="nombres-grid">
     <input class="input-nombre" id="input-j1" type="text" placeholder="Jugador 1" maxlength="12" />
     <input class="input-nombre" id="input-j2" type="text" placeholder="Jugador 2" maxlength="12" />
+  </div>
+  <div class="sexo-grid">
+    <div class="sexo-jugador">
+      <button class="btn-sexo btn-sexo-j1 sel" data-sexo="H" onclick="seleccionarSexo('j1','H',this)">👨 Hombre</button>
+      <button class="btn-sexo btn-sexo-j1" data-sexo="M" onclick="seleccionarSexo('j1','M',this)">👩 Mujer</button>
+    </div>
+    <div class="sexo-jugador">
+      <button class="btn-sexo btn-sexo-j2 sel" data-sexo="M" onclick="seleccionarSexo('j2','M',this)">👩 Mujer</button>
+      <button class="btn-sexo btn-sexo-j2" data-sexo="H" onclick="seleccionarSexo('j2','H',this)">👨 Hombre</button>
+    </div>
   </div>
 
   <p class="seccion-label">Puntos para ganar</p>
@@ -385,6 +397,12 @@ let mazo=[], cartaJ1=null, cartaJ2=null;
 let perdedorActual=null, juegoActivo=true;
 let colasCastigos={};
 let pendienteCombo=false, combosRestantes=0;
+let combinacion='hetero';
+
+function seleccionarSexo(jugador, sexo, btn) {
+  document.querySelectorAll('.btn-sexo-'+jugador).forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
 
 const nivelConfig = {
   1:{ label:'🌙 CHILL', clase:'ni1' },
@@ -413,6 +431,12 @@ function iniciarJuego() {
 
   nombreJ1 = document.getElementById('input-j1').value.trim() || 'Jugador 1';
   nombreJ2 = document.getElementById('input-j2').value.trim() || 'Jugador 2';
+
+  const sexoJ1 = document.querySelector('.btn-sexo-j1.sel').dataset.sexo;
+  const sexoJ2 = document.querySelector('.btn-sexo-j2.sel').dataset.sexo;
+  if ((sexoJ1==='H' && sexoJ2==='M') || (sexoJ1==='M' && sexoJ2==='H')) combinacion='hetero';
+  else if (sexoJ1==='H' && sexoJ2==='H') combinacion='gay';
+  else combinacion='lesbi';
 
   mazo = crearMazo();
 
@@ -526,8 +550,8 @@ function mostrarBotonesTipo(esDoble) {
 // CASTIGOS DESDE JSON
 // ═══════════════════════════════
 function getCastigo(tipo) {
-  const key = String(nivel) + tipo;
- const lista = cartasData[String(nivel)][tipo + 's'];
+  const key = combinacion + String(nivel) + tipo;
+  const lista = cartasData[combinacion][String(nivel)][tipo + 's'];
   if (!colasCastigos[key] || colasCastigos[key].length === 0) {
     const copia = [...lista];
     for (let i=copia.length-1; i>0; i--) {
@@ -544,9 +568,9 @@ function mostrarCastigo(tipo) {
   const esDoble = cartaJ1 && cartaJ2 && cartaJ1.valor === cartaJ2.valor;
 
   const tipoLabels = {
-    truth: { label:'🧠 TRUTH', clase:'badge-truth' },
-    dare:  { label:'🎯 DARE',  clase:'badge-dare'  },
-    strip: { label:'👗 STRIP', clase:'badge-strip' },
+    truth: { label:'🧠 VERDAD', clase:'badge-truth' },
+    dare:  { label:'🎯 RETO',   clase:'badge-dare'  },
+    strip: { label:'👗 PRENDA', clase:'badge-strip' },
   };
 
   const badge = document.getElementById('castigo-badge');
@@ -657,11 +681,6 @@ function lanzarConfetti() {
     },i*35);
   }
 }
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
 </script>
 </body>
 </html>
