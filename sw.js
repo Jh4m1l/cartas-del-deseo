@@ -1,12 +1,12 @@
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open('cartas-cache').then(cache => {
+    caches.open('cartas-cache-v2').then(cache => {
       return cache.addAll([
-        '/cartas-del-deseo/',
-        '/cartas-del-deseo/index.html',
-        '/cartas-del-deseo/cartas.json',
-        '/cartas-del-deseo/icono.png'
-      ]);
+  '/cartas-del-deseo/',
+  '/cartas-del-deseo/index.html',
+  '/cartas-del-deseo/cartas.json',
+  '/cartas-del-deseo/icono.png'
+]);
     })
   );
 });
