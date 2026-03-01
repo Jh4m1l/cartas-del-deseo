@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartas del Deseo — Editor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rojo: #e8244a;
+      --rojo-dark: #a01530;
+      --bg: #080810;
+      --surface: #10101e;
+      --surface2: #16162a;
+      --border: #2a2a45;
+      --text: #f0eeff;
+      --muted: #7070a0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0d0d22 0%, #1a0a18 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    header h1 span { color: var(--rojo); font-style: italic; }
+    .badge {
+      background: var(--rojo);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 4px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+    .tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: all 0.2s;
+      border: none;
+      background: none;
+    }
+    .tab.active {
+      background: var(--rojo);
+      color: #fff;
+      box-shadow: 0 2px 12px #e8244a55;
+    }
+    .tab:not(.active):hover { color: var(--text); background: var(--surface2); }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* Form elements */
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      margin-top: 18px;
+    }
+    label:first-child { margin-top: 0; }
+
+    select, textarea, input[type="text"] {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      transition: border 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    select:focus, textarea:focus, input[type="text"]:focus {
+      border-color: var(--rojo);
+      box-shadow: 0 0 0 3px #e8244a22;
+    }
+    textarea { resize: vertical; min-height: 80px; }
+
+    /* Row de selects */
+    .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+    /* Emoji picker nativo */
+    .emoji-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .emoji-trigger {
+      font-size: 2.2rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border 0.2s, transform 0.1s;
+      user-select: none;
+      flex-shrink: 0;
+    }
+    .emoji-trigger:hover { border-color: var(--rojo); transform: scale(1.05); }
+    .emoji-hint {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .emoji-hint kbd {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 2px 6px;
+      font-size: 0.78rem;
+      font-family: monospace;
+      color: var(--text);
+    }
+    #emoji-input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 1px;
+      height: 1px;
+    }
+
+    /* Opcional toggle */
+    .opcional-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 0.85rem;
+      user-select: none;
+    }
+    .opcional-toggle input { accent-color: var(--rojo); width: 16px; height: 16px; cursor: pointer; }
+    .opcional-toggle:hover { color: var(--text); }
+    .opcional-fields { display: none; }
+    .opcional-fields.visible { display: block; }
+
+    /* Botón principal */
+    .btn {
+      margin-top: 22px;
+      width: 100%;
+      padding: 14px;
+      background: var(--rojo);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .btn:hover { background: #c41e3f; box-shadow: 0 4px 20px #e8244a55; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    /* Mensaje */
+    #mensaje {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      height: 20px;
+      transition: opacity 0.3s;
+    }
+    #mensaje.ok { color: #4caf8a; }
+    #mensaje.err { color: var(--rojo); }
+
+    /* Filtros ver cartas */
+    .filtros {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .btn-ver {
+      margin-top: 14px;
+      width: 100%;
+      padding: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-ver:hover { border-color: var(--rojo); background: #1a1030; }
+
+    /* Contador */
+    .contador {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .contador span { color: var(--rojo); font-weight: 600; }
+
+    /* Lista cartas */
+    #lista-cartas { display: flex; flex-direction: column; gap: 10px; }
+
+    .carta-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: border 0.2s;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .carta-item:hover { border-color: #3a3a60; }
+
+    .carta-emoji { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
+    .carta-body { flex: 1; }
+    .carta-num { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .carta-texto { font-size: 0.95rem; line-height: 1.5; }
+    .carta-tag {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--rojo);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .carta-tag strong { color: #ff6b8a; }
+
+    .btn-eliminar {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 2px 6px;
+      border-radius: 6px;
+      transition: all 0.15s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .btn-eliminar:hover { background: #e8244a22; color: var(--rojo); }
+
+    /* Empty state */
+    .empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+    .empty div { font-size: 2.5rem; margin-bottom: 10px; }
+
+    /* Divider opcional */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span style="font-size:1.8rem">🃏</span>
+  <h1>Cartas del <span>Deseo</span></h1>
+  <div class="badge">Editor</div>
+</header>
+
+<div class="container">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('agregar', this)">✨ Agregar</button>
+    <button class="tab" onclick="switchTab('ver', this)">📋 Ver cartas</button>
+  </div>
+
+  <!-- Panel Agregar -->
+  <div class="panel active" id="panel-agregar">
+
+    <label>Categoría / Nivel / Tipo</label>
+    <div class="row">
+      <select id="categoria">
+        <option value="hetero">Hetero</option>
+        <option value="gay">Gay</option>
+        <option value="lesbi">Lesbi</option>
+      </select>
+      <select id="nivel">
+        <option value="1">Nivel 1</option>
+        <option value="2">Nivel 2</option>
+        <option value="3">Nivel 3</option>
+        <option value="4">Nivel 4 — Secreto 🔒</option>
+      </select>
+      <select id="tipo">
+        <option value="truths">Verdad</option>
+<option value="dares">Reto</option>
+<option value="strips">Prenda</option>
+      </select>
+    </div>
+
+    <label>Emoji</label>
+    <div class="emoji-area">
+      <div class="emoji-trigger" id="emoji-display" onclick="abrirEmoji()">❓</div>
+      <div class="emoji-hint">
+        Haz clic en el cuadro y luego presiona<br>
+        <kbd>Win + .</kbd> (Windows) o <kbd>Cmd + Ctrl + Espacio</kbd> (Mac)<br>
+        para abrir el selector de emojis del sistema.
+      </div>
+    </div>
+    <input type="text" id="emoji-input-visible" placeholder="O escribe el emoji aquí..." maxlength="4" style="margin-top:10px;" oninput="actualizarEmoji(this.value)">
+
+    <label>Texto de la carta</label>
+    <textarea id="texto" placeholder="Escribe aquí la acción, pregunta o reto..."></textarea>
+
+    <label class="opcional-toggle">
+      <input type="checkbox" id="check-opcional" onchange="toggleOpcional()">
+      ¿Tiene término o kink especial?
+    </label>
+
+    <div class="opcional-fields" id="opcional-fields">
+      <label>Término</label>
+      <input type="text" id="termino" placeholder="Ej: Wax play">
+      <label>Definición</label>
+      <input type="text" id="definicion" placeholder="Explicación corta y clara...">
+    </div>
+
+    <button class="btn" onclick="enviar()">Agregar carta ✨</button>
+    <div id="mensaje"></div>
+  </div>
+
+  <!-- Panel Ver -->
+  <div class="panel" id="panel-ver">
+
+    <div class="filtros">
+      <select id="v-categoria">
+        <option value="hetero">Hetero</option>
+        <option value="gay">Gay</option>
+        <option value="lesbi">Lesbi</option>
+      </select>
+      <select id="v-nivel">
+        <option value="1">Nivel 1</option>
+        <option value="2">Nivel 2</option>
+        <option value="3">Nivel 3</option>
+        <option value="4">Nivel 4 — Secreto 🔒</option>
+      </select>
+      <select id="v-tipo">
+        <option value="truths">Verdad</option>
+<option value="dares">Reto</option>
+<option value="strips">Prenda</option>
+      </select>
+    </div>
+
+    <button class="btn-ver" onclick="verCartas()">🔍 Buscar cartas</button>
+
+    <hr class="divider">
+
+    <div class="contador" id="contador" style="display:none">
+      Mostrando <span id="total">0</span> cartas
+    </div>
+
+    <div id="lista-cartas">
+      <div class="empty">
+        <div>🃏</div>
+        Elige los filtros y presiona buscar
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Tab switching
+  function switchTab(nombre, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'))
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'))
+    document.getElementById('panel-' + nombre).classList.add('active')
+    btn.classList.add('active')
+  }
+
+  // Emoji
+  function abrirEmoji() {
+    const input = document.getElementById('emoji-input-visible')
+    input.focus()
+    input.select()
+  }
+
+  function actualizarEmoji(val) {
+    const emoji = [...val].filter(c => c.trim())[0] || '❓'
+    document.getElementById('emoji-display').textContent = emoji
+  }
+
+  function getEmoji() {
+    const val = document.getElementById('emoji-input-visible').value.trim()
+    return val || '🃏'
+  }
+
+  // Toggle opcional
+  function toggleOpcional() {
+    const checked = document.getElementById('check-opcional').checked
+    document.getElementById('opcional-fields').classList.toggle('visible', checked)
+  }
+
+  // Agregar carta
+  async function enviar() {
+    const texto = document.getElementById('texto').value.trim()
+    if (!texto) { mostrarMensaje('Escribe el texto de la carta', 'err'); return; }
+
+    const body = {
+      categoria: document.getElementById('categoria').value,
+      nivel: document.getElementById('nivel').value,
+      tipo: document.getElementById('tipo').value,
+      emoji: getEmoji(),
+      texto: texto
+    }
+
+    if (document.getElementById('check-opcional').checked) {
+      body.termino = document.getElementById('termino').value
+      body.definicion = document.getElementById('definicion').value
+    }
+
+    try {
+      const res = await fetch('/agregar', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body)
+      })
+      const data = await res.json()
+      if (data.ok) {
+        mostrarMensaje('✅ Carta agregada correctamente', 'ok')
+        document.getElementById('texto').value = ''
+        document.getElementById('emoji-input-visible').value = ''
+        document.getElementById('emoji-display').textContent = '❓'
+        document.getElementById('termino').value = ''
+        document.getElementById('definicion').value = ''
+        document.getElementById('check-opcional').checked = false
+        document.getElementById('opcional-fields').classList.remove('visible')
+      } else {
+        mostrarMensaje('❌ Error al guardar', 'err')
+      }
+    } catch(e) {
+      mostrarMensaje('❌ No se pudo conectar', 'err')
+    }
+  }
+
+  function mostrarMensaje(txt, tipo) {
+    const el = document.getElementById('mensaje')
+    el.textContent = txt
+    el.className = tipo
+    setTimeout(() => { el.textContent = ''; el.className = ''; }, 3000)
+  }
+
+  // Ver cartas
+  let cartasActuales = []
+  let filtrosActuales = {}
+
+  async function verCartas() {
+    const categoria = document.getElementById('v-categoria').value
+    const nivel = document.getElementById('v-nivel').value
+    const tipo = document.getElementById('v-tipo').value
+    filtrosActuales = { categoria, nivel, tipo }
+
+    const res = await fetch(`/cartas?categoria=${categoria}&nivel=${nivel}&tipo=${tipo}`)
+    cartasActuales = await res.json()
+
+    document.getElementById('contador').style.display = 'block'
+    document.getElementById('total').textContent = cartasActuales.length
+    renderCartas()
+  }
+
+  function renderCartas() {
+    const lista = document.getElementById('lista-cartas')
+    if (cartasActuales.length === 0) {
+      lista.innerHTML = '<div class="empty"><div>🫙</div>No hay cartas aquí todavía</div>'
+      return
+    }
+
+    lista.innerHTML = cartasActuales.map((c, i) => `
+      <div class="carta-item" id="carta-${i}">
+        <div class="carta-emoji">${c.emoji || '🃏'}</div>
+        <div class="carta-body">
+          <div class="carta-num">#${i + 1}</div>
+          <div class="carta-texto">${c.texto}</div>
+          ${c.termino ? `<div class="carta-tag">🏷️ <strong>${c.termino}:</strong> ${c.definicion || ''}</div>` : ''}
+        </div>
+        <button class="btn-eliminar" onclick="eliminarCarta(${i})" title="Eliminar">✕</button>
+      </div>
+    `).join('')
+  }
+
+  async function eliminarCarta(indice) {
+    if (!confirm('¿Eliminar esta carta?')) return
+
+    const { categoria, nivel, tipo } = filtrosActuales
+    const res = await fetch('/eliminar', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ categoria, nivel, tipo, indice })
+    })
+    const data = await res.json()
+    if (data.ok) {
+      cartasActuales.splice(indice, 1)
+      document.getElementById('total').textContent = cartasActuales.length
+      renderCartas()
+    }
+  }
+</script>
+</body>
+</html>
