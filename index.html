@@ -407,10 +407,11 @@
     <div class="stat-final"><div class="n" id="final-j1" style="color:#6ee7b7">0</div><div class="l" id="final-j1-label">J1</div></div>
     <div class="stat-final"><div class="n" id="final-j2" style="color:#ff6b6b">0</div><div class="l" id="final-j2-label">J2</div></div>
   </div>
-  <div class="btns-final">
-    <button class="btn-revancha" onclick="revancha()">🔁 Revancha</button>
-    <button class="btn-menu" onclick="volverInicio()">🏠 Menú</button>
-  </div>
+ <div class="btns-final">
+  <button class="btn-revancha" onclick="revancha()">🔁 Revancha</button>
+  <button class="btn-menu" onclick="volverInicio()">🏠 Menú</button>
+</div>
+<button id="btn-entrar-nivel4" onclick="desbloquearNivel4()" style="display:none;margin-top:12px;width:100%;padding:14px;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;background:linear-gradient(135deg,#4a0080,#9b59b6);border:none;border-radius:50px;color:white;cursor:pointer;box-shadow:0 6px 30px rgba(155,89,182,0.5);letter-spacing:2px;">🔮 ENTRAR AL NIVEL SECRETO</button>
 </div>
 
 <script>
@@ -844,6 +845,11 @@ function mostrarGanador() {
   document.getElementById('final-j2').textContent = puntosJ2;
   document.getElementById('final-j1-label').textContent = nombreJ1;
   document.getElementById('final-j2-label').textContent = nombreJ2;
+
+  // Mostrar botón nivel 4 solo si no estamos ya en él
+  const btnN4 = document.getElementById('btn-entrar-nivel4');
+  btnN4.style.display = (!enNivel4 && !empate) ? 'block' : 'none';
+
   actualizarEstiloNivel4(false);
   if (!empate) lanzarConfetti();
   mostrar('pantalla-ganador');
