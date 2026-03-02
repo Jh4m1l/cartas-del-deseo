@@ -542,14 +542,16 @@ function desbloquearNivel4() {
 function iniciarNivel4() {
   document.getElementById('overlay-nivel4').classList.remove('visible');
   enNivel4 = true;
-  mazo = crearMazoNivel4();
+  puntosJ1 = 0; puntosJ2 = 0;
   juegoActivo = true;
+  mazo = crearMazoNivel4();
 
   actualizarIndicadorNivel(4);
   actualizarEstiloNivel4(true);
   crearEstrellas();
   actualizarMarcador();
   resetRonda();
+  mostrar('pantalla-juego');
 }
 
 function actualizarIndicadorNivel(n) {
