@@ -802,12 +802,11 @@ function resetRonda() {
   document.getElementById('btn-tirar').style.display='block';
   document.getElementById('btn-tirar').disabled = mazo.length < 2;
 
-  if (mazo.length < 2) {
-    if (!enNivel4) {
-      // Terminó el mazo normal → desbloquear nivel 4
-      juegoActivo = false;
-      setTimeout(desbloquearNivel4, 800);
-    } else {
+ if (mazo.length < 2) {
+  if (!enNivel4) {
+    juegoActivo = false;
+    setTimeout(mostrarGanador, 800);
+  } else {
       // Terminó el nivel 4 → mostrar ganador
       juegoActivo = false;
       setTimeout(mostrarGanador, 800);
