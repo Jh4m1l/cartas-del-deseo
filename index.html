@@ -848,8 +848,22 @@ function mostrarGanador() {
   document.getElementById('final-j2-label').textContent = nombreJ2;
 
   // Mostrar botón nivel 4 solo si no estamos ya en él
-  const btnN4 = document.getElementById('btn-entrar-nivel4');
-  btnN4.style.display = (!enNivel4 && !empate) ? 'block' : 'none';
+const btnN4 = document.getElementById('btn-entrar-nivel4');
+if (!enNivel4 && !empate) {
+  btnN4.style.display = 'block';
+  if (nivel === 1) {
+    btnN4.textContent = '🔥 SUBIR A CALIENTE';
+    btnN4.onclick = () => { nivel = 2; iniciarJuego(); };
+  } else if (nivel === 2) {
+    btnN4.textContent = '💀 SUBIR A EXPLÍCITO';
+    btnN4.onclick = () => { nivel = 3; iniciarJuego(); };
+  } else if (nivel === 3) {
+    btnN4.textContent = '🔮 ENTRAR AL NIVEL SECRETO';
+    btnN4.onclick = desbloquearNivel4;
+  }
+} else {
+  btnN4.style.display = 'none';
+}
 
   actualizarEstiloNivel4(false);
   if (!empate) lanzarConfetti();
